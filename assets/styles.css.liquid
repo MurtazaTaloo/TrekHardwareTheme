@@ -11241,7 +11241,21 @@ img.footer-logo {
 .footer_credits {
   margin-top: 10px;
   border-top: 1px solid {{ settings.sub_footer_border_color }};
+  padding-bottom: 20px;
 }
+
+@media only screen and (min-width: 799px) {
+  .footer_credits {
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 449px) and (max-width: 750px) {
+  .footer_credits {
+    padding-bottom: 60px;
+  }
+}
+
 
 .payment_methods {
   margin: 10px 0 6px 0;
