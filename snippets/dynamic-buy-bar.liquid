@@ -1,0 +1,40 @@
+
+<div id="dynamic-buy-bar" class="dynamic-buy-bar hide-dynamic-buy-bar">
+  <div class="product-info-custom">
+    <img src="{{ product.featured_media | img_url: '100x100' }}" alt="no" width="75" height="75">
+    <div class="product-price-custom">{{ product.price | money_with_currency }}</div>
+  </div>
+  <button onclick="scrollToTop()" class="back-to-buyNow-button">Buy Now</button>
+</div>
+
+<script>
+  	myID = document.getElementById("dynamic-buy-bar");
+
+    var myScrollFunc = function() {
+      var y = window.scrollY;
+      if (window.screen.width >= 880){
+         if (y >= 750) {
+          myID.className = "dynamic-buy-bar show-dynamic-buy-bar"
+        } else {
+          myID.className = "dynamic-buy-bar hide-dynamic-buy-bar"
+         }
+      } else {
+      	 if (y >= 1400) {
+          myID.className = "dynamic-buy-bar show-dynamic-buy-bar"
+        } else {
+          myID.className = "dynamic-buy-bar hide-dynamic-buy-bar"
+         }	    
+      }
+     
+  	  };
+
+    var scrollToTop = function() {
+               window.scroll({
+                  top: 0,
+                  left: 0,
+                  behavior: 'smooth'
+                });
+         	 }
+  
+	window.addEventListener("scroll", myScrollFunc); 
+</script>
